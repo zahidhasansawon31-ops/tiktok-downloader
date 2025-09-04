@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TikTok Video & Photo Downloader - No Watermark</title>
+  <meta name="description" content="Download TikTok videos and photos without watermark in HD quality. Free, secure & unlimited.">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background: #121212;
+      color: #f1f1f1;
+      display: flex; justify-content: center; align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .box {
+      width: 95%; max-width: 600px;
+      padding: 25px;
+      background: #1e1e1e;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(255,0,80,0.4);
+    }
+    h1 { color: #ff0050; }
+    input {
+      width: 100%; padding: 12px; margin: 12px 0;
+      border: none; border-radius: 8px;
+      background: #2a2a2a; color: white;
+    }
+    button {
+      width: 100%; padding: 12px; border: none;
+      border-radius: 8px; font-weight: bold;
+      background: #ff0050; color: white;
+      cursor: pointer; transition: 0.3s;
+    }
+    button:hover { background: #e60048; }
+    .download {
+      display: inline-block; margin: 10px 5px; padding: 10px 15px;
+      background: #00c853; color: white; font-weight: bold;
+      border-radius: 8px; text-decoration: none; transition: 0.3s;
+    }
+    .download:hover { background: #00a843; }
+    .error { color: #ff5252; margin-top: 10px; }
+    .loading { margin-top: 15px; font-size: 14px; color: #bbb; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>🎵 TikTok Downloader</h1>
+    <p>Download TikTok <b>Videos</b> & <b>Photos</b> without watermark in HD.</p>
+
+    <input type="text" id="url" placeholder="Paste TikTok Video/Photo URL here">
+    <button onclick="downloadContent()">Download</button>
+
+    <div id="result"></div>
+  </div>
+
+  <footer>
+    <p>© 2025 TikTok Downloader | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    function downloadContent() {
+      let url = document.getElementById("url").value;
+      let resultDiv = document.getElementById("result");
+      resultDiv.innerHTML = "";
+
+      if(url === "") {
+        resultDiv.innerHTML = "<p class='error'>⚠️ Please paste a TikTok link!</p>";
+        return;
+      }
+
+      resultDiv.innerHTML = "<p class='loading'>⏳ Fetching content, please wait...</p>";
+
+      let apiUrl = "https://www.tikwm.com/api/?url=" + encodeURIComponent(url);
+      fetch(apiUrl)
+        .then(res => res.json())
+        .then(data => {
+          if (data.data) {
+            resultDiv.innerHTML = "";
+
+            // 🎥 যদি ভিডিও থাকে
+            if (data.data.play) {
+              resultDiv.innerHTML +=
+                `<a class="download" href="${data.data.play}" download target="_blank" rel="noopener noreferrer">👉 Download Video</a><br>`;
+            }
+
+            // 🖼️ যদি ফটো থাকে (images array)
+            if (data.data.images && data.data.images.length > 0) {
+              resultDiv.innerHTML += "<h3>Download Photos:</h3>";
+              data.data.images.forEach((img, index) => {
+                resultDiv.innerHTML +=
+                  `<a class="download" href="${img}" download="tiktok-photo-${index+1}.jpg" target="_blank" rel="noopener noreferrer">📷 Photo ${index+1}</a>`;
+              });
+            }
+
+            if (!data.data.play && (!data.data.images || data.data.images.length === 0)) {
+              resultDiv.innerHTML = "<p class='error'>❌ No video or photo found for this link.</p>";
+            }
+
+          } else {
+            resultDiv.innerHTML = "<p class='error'>❌ Error: Invalid TikTok link.</p>";
+          }
+        })
+        .catch(() => {
+          resultDiv.innerHTML = "<p class='error'>❌ Something went wrong. Please try again.</p>";
+        });
+    }
+  </script>
+</body>
+</html>
