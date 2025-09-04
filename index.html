@@ -1,140 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TikTok Video & Photo Downloader | No Watermark</title>
-  <meta name="description" content="Download TikTok videos and photos without watermark in HD. Free, fast, and secure for all devices.">
-  <meta name="keywords" content="TikTok downloader, download TikTok video, download TikTok photo, TikTok no watermark, TikTok HD video">
-  <meta name="robots" content="index, follow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TikTok Video & Photo Downloader | Free & Premium</title>
+<meta name="description" content="Download TikTok videos and photos without watermark in HD. Free, fast, and secure. Supports ads, affiliate links, and premium features.">
+<meta name="keywords" content="TikTok downloader, download TikTok video, download TikTok photo, TikTok HD, no watermark">
+<meta name="robots" content="index, follow">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="TikTok Video & Photo Downloader - No Watermark">
-  <meta property="og:description" content="Download TikTok videos and photos without watermark in HD. Free, fast, secure.">
-  <meta property="og:image" content="https://username.github.io/tiktok-downloader/thumbnail.jpg">
-  <meta property="og:url" content="https://username.github.io/tiktok-downloader/">
-  <meta property="og:type" content="website">
+<!-- Open Graph -->
+<meta property="og:title" content="TikTok Video & Photo Downloader - No Watermark">
+<meta property="og:description" content="Download TikTok videos and photos without watermark in HD. Free, fast, secure.">
+<meta property="og:image" content="https://username.github.io/tiktok-downloader/thumbnail.jpg">
+<meta property="og:url" content="https://username.github.io/tiktok-downloader/">
+<meta property="og:type" content="website">
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="TikTok Video & Photo Downloader - No Watermark">
-  <meta name="twitter:description" content="Download TikTok videos and photos without watermark in HD. Free & Secure.">
-  <meta name="twitter:image" content="https://username.github.io/tiktok-downloader/thumbnail.jpg">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TikTok Video & Photo Downloader - No Watermark">
+<meta name="twitter:description" content="Download TikTok videos and photos without watermark in HD. Free & Secure.">
+<meta name="twitter:image" content="https://username.github.io/tiktok-downloader/thumbnail.jpg">
 
-  <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#121212; color:#f1f1f1; display:flex; justify-content:center; align-items:center; flex-direction:column; min-height:100vh; }
-    .box { width:95%; max-width:600px; padding:25px; background:#1e1e1e; border-radius:15px; text-align:center; box-shadow:0 0 15px rgba(255,0,80,0.4);}
-    h1 { color:#ff0050; margin-bottom:10px;}
-    h2 { color:#ff4081; margin:15px 0 10px;}
-    input { width:100%; padding:12px; margin:12px 0; border:none; border-radius:8px; background:#2a2a2a; color:white; }
-    button { width:100%; padding:12px; border:none; border-radius:8px; font-weight:bold; background:#ff0050; color:white; cursor:pointer; transition:0.3s; }
-    button:hover { background:#e60048;}
-    .download { display:inline-block; margin:10px 5px; padding:10px 15px; background:#00c853; color:white; font-weight:bold; border-radius:8px; text-decoration:none; transition:0.3s; }
-    .download:hover { background:#00a843; }
-    .error { color:#ff5252; margin-top:10px; }
-    .loading { margin-top:15px; font-size:14px; color:#bbb; }
-    footer { margin-top:30px; font-size:13px; color:#777; }
-    ul, ol { text-align:left; margin-left:20px; }
-  </style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XXXXXXX');
+</script>
+
+<style>
+body { margin:0; padding:0; font-family: 'Arial', sans-serif; background:#121212; color:#fff; display:flex; flex-direction:column; align-items:center; min-height:100vh;}
+.container { width:95%; max-width:700px; margin:30px auto; background:#1e1e1e; padding:30px; border-radius:15px; box-shadow:0 0 20px rgba(255,0,80,0.3);}
+h1 { color:#ff0050; text-align:center; margin-bottom:10px;}
+h2 { color:#ff4081; margin-top:25px;}
+input { width:100%; padding:14px; margin:12px 0; border:none; border-radius:8px; background:#2a2a2a; color:white; font-size:16px;}
+button { width:100%; padding:14px; border:none; border-radius:8px; font-weight:bold; background:#ff0050; color:white; cursor:pointer; font-size:16px; transition:0.3s;}
+button:hover { background:#e60048;}
+.download { display:inline-block; margin:10px 5px; padding:10px 15px; background:#00c853; color:white; font-weight:bold; border-radius:8px; text-decoration:none; transition:0.3s;}
+.download:hover { background:#00a843; }
+.error { color:#ff5252; margin-top:10px; text-align:center;}
+.loading { color:#bbb; margin-top:15px; text-align:center;}
+ul, ol { margin-left:20px; }
+.ads { margin:20px 0; padding:15px; background:#2a2a2a; border-radius:10px; text-align:center; font-weight:bold;}
+footer { text-align:center; color:#777; margin-top:30px; font-size:14px;}
+</style>
 </head>
 <body>
-  <div class="box">
-    <h1>🎵 TikTok Video & Photo Downloader</h1>
-    <p>Download TikTok <b>Videos</b> & <b>Photos</b> without watermark in HD quality.</p>
 
-    <input type="text" id="url" placeholder="Paste TikTok Video/Photo URL here">
-    <button onclick="downloadContent()">Download</button>
+<div class="container">
+<h1>🎵 TikTok Downloader</h1>
+<p style="text-align:center;">Download TikTok <b>Videos</b> & <b>Photos</b> without watermark in HD quality.</p>
 
-    <div id="result"></div>
+<input type="text" id="url" placeholder="Paste TikTok Video/Photo URL here">
+<button onclick="downloadContent()">Download</button>
 
-    <h2>Why Use Our TikTok Downloader?</h2>
-    <ul>
-      <li>✅ 100% Free – No hidden charges</li>
-      <li>✅ No Watermark – Clean HD videos & photos</li>
-      <li>✅ Works on all devices (Android, iOS, Windows, Mac)</li>
-      <li>✅ Download unlimited TikTok videos & photos</li>
-    </ul>
+<div id="result"></div>
 
-    <h2>How to Download TikTok Videos & Photos?</h2>
-    <ol>
-      <li>Open TikTok and copy the video/photo link.</li>
-      <li>Paste the link in the box above.</li>
-      <li>Click the download button to save your video/photo.</li>
-    </ol>
+<!-- Ads Placeholder -->
+<div class="ads">Ads Placeholder (Google AdSense)</div>
 
-    <h2>FAQ</h2>
-    <h3>Is this TikTok downloader free?</h3>
-    <p>Yes! Our TikTok downloader is 100% free and always will be.</p>
-    <h3>Can I download TikTok videos and photos without watermark?</h3>
-    <p>Yes, all videos and photos are downloaded without watermark in HD quality.</p>
-    <h3>Do I need to install any app?</h3>
-    <p>No app required. Just paste the link and download directly from your browser.</p>
-  </div>
+<!-- Affiliate Section -->
+<h2>Recommended TikTok Tools</h2>
+<ul>
+<li><a href="https://affiliate-link.com/tool1" target="_blank" class="download">🎬 Video Editing App</a></li>
+<li><a href="https://affiliate-link.com/tool2" target="_blank" class="download">🎵 Music Pack for TikTok</a></li>
+<li><a href="https://affiliate-link.com/tool3" target="_blank" class="download">📊 TikTok Analytics Tool</a></li>
+</ul>
 
-  <footer>
-    <p>© 2025 TikTok Downloader | All Rights Reserved</p>
-  </footer>
+<!-- Premium / Donation -->
+<h2>Premium & Support</h2>
+<button onclick="alert('Premium Feature: Ad-free & High-Speed Download'); gtag('event','premium_click',{'event_category':'Premium','event_label':'Go Premium'});">💎 Go Premium</button>
+<button onclick="window.open('https://www.paypal.com/donate?hosted_button_id=XXXX', '_blank'); gtag('event','donation_click',{'event_category':'Donation','event_label':'PayPal'});">🙏 Donate</button>
 
-  <script>
-    function downloadPhoto(url, filename){
-      fetch(url)
-        .then(res => res.blob())
-        .then(blob => {
-          const blobUrl = window.URL.createObjectURL(blob);
-          const a = document.createElement('a');
-          a.href = blobUrl;
-          a.download = filename;
-          document.body.appendChild(a);
-          a.click();
-          a.remove();
-          window.URL.revokeObjectURL(blobUrl);
-        })
-        .catch(()=> alert("Photo download failed!"));
-    }
+<h2>FAQ</h2>
+<h3>Is this downloader free?</h3>
+<p>Yes! Basic downloads are free. Premium features optional.</p>
+<h3>Can I download videos & photos without watermark?</h3>
+<p>Yes, all content downloads in HD without watermark.</p>
+<h3>Do I need to install any app?</h3>
+<p>No app required. Just paste the link and download directly from browser.</p>
+</div>
 
-    function downloadContent() {
-      let url = document.getElementById("url").value;
-      let resultDiv = document.getElementById("result");
-      resultDiv.innerHTML = "";
+<footer>© 2025 TikTok Downloader | All Rights Reserved</footer>
 
-      if(url===""){ resultDiv.innerHTML="<p class='error'>⚠️ Please paste a TikTok link!</p>"; return; }
+<script>
+function trackDownload(type){
+  gtag('event','download_click',{
+    'event_category':'TikTok Downloader',
+    'event_label': type
+  });
+}
 
-      resultDiv.innerHTML="<p class='loading'>⏳ Fetching content, please wait...</p>";
+function downloadPhoto(url, filename){
+  fetch(url)
+    .then(res=>res.blob())
+    .then(blob=>{
+      const blobUrl = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = blobUrl;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      window.URL.revokeObjectURL(blobUrl);
+    })
+    .catch(()=> alert("Photo download failed!"));
+}
 
-      let apiUrl = "https://www.tikwm.com/api/?url=" + encodeURIComponent(url);
-      fetch(apiUrl)
-        .then(res => res.json())
-        .then(data => {
-          if(data.data){
-            resultDiv.innerHTML="";
+function downloadContent(){
+  let url=document.getElementById("url").value;
+  let resultDiv=document.getElementById("result");
+  resultDiv.innerHTML="";
+  if(url===""){ resultDiv.innerHTML="<p class='error'>⚠️ Please paste a TikTok link!</p>"; return; }
+  resultDiv.innerHTML="<p class='loading'>⏳ Fetching content...</p>";
 
-            // Video
-            if(data.data.play){
-              resultDiv.innerHTML+=`<a class="download" href="${data.data.play}" download target="_blank" rel="noopener noreferrer">👉 Download Video</a><br>`;
-            }
+  let apiUrl="https://www.tikwm.com/api/?url="+encodeURIComponent(url);
+  fetch(apiUrl)
+    .then(res=>res.json())
+    .then(data=>{
+      if(data.data){
+        resultDiv.innerHTML="";
+        // Video
+        if(data.data.play){
+          resultDiv.innerHTML+=`<a class="download" href="${data.data.play}" download target="_blank" rel="noopener" onclick="trackDownload('video')">👉 Download Video</a><br>`;
+        }
+        // Photos
+        if(data.data.images && data.data.images.length>0){
+          resultDiv.innerHTML+="<h3>Download Photos:</h3>";
+          data.data.images.forEach((img,index)=>{
+            const btn=document.createElement('button');
+            btn.innerText=`📷 Photo ${index+1}`;
+            btn.className='download';
+            btn.onclick=()=>{ downloadPhoto(img, `tiktok-photo-${index+1}.jpg`); trackDownload(`photo-${index+1}`);}
+            resultDiv.appendChild(btn);
+          });
+        }
+        if(!data.data.play && (!data.data.images || data.data.images.length===0)){
+          resultDiv.innerHTML="<p class='error'>❌ No video or photo found for this link.</p>";
+        }
+      } else {
+        resultDiv.innerHTML="<p class='error'>❌ Invalid TikTok link.</p>";
+      }
+    })
+    .catch(()=>{ resultDiv.innerHTML="<p class='error'>❌ Something went wrong. Try again.</p>"; });
+}
+</script>
 
-            // Photos
-            if(data.data.images && data.data.images.length>0){
-              resultDiv.innerHTML+="<h3>Download Photos:</h3>";
-              data.data.images.forEach((img,index)=>{
-                const btn=document.createElement('button');
-                btn.innerText=`📷 Photo ${index+1}`;
-                btn.className='download';
-                btn.onclick=()=> downloadPhoto(img, `tiktok-photo-${index+1}.jpg`);
-                resultDiv.appendChild(btn);
-              });
-            }
-
-            if(!data.data.play && (!data.data.images || data.data.images.length===0)){
-              resultDiv.innerHTML="<p class='error'>❌ No video or photo found for this link.</p>";
-            }
-
-          } else {
-            resultDiv.innerHTML="<p class='error'>❌ Error: Invalid TikTok link.</p>";
-          }
-        })
-        .catch(()=>{ resultDiv.innerHTML="<p class='error'>❌ Something went wrong. Please try again.</p>"; });
-    }
-  </script>
 </body>
 </html>
