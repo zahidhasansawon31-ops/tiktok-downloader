@@ -3,25 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TikTok Video & Photo Downloader - No Watermark</title>
-  <meta name="description" content="Download TikTok videos and photos without watermark in HD quality. Free, secure & unlimited.">
+  <title>TikTok Video & Photo Downloader | No Watermark</title>
+  <meta name="description" content="Free TikTok downloader to download videos and photos without watermark in HD. Works on Android, iOS, Windows & Mac.">
+  <meta name="keywords" content="TikTok downloader, download TikTok video, download TikTok photo, TikTok no watermark, TikTok HD video">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph for Social Media -->
+  <meta property="og:title" content="TikTok Video & Photo Downloader - No Watermark">
+  <meta property="og:description" content="Download TikTok videos and photos without watermark in HD. Free, fast, secure.">
+  <meta property="og:image" content="https://yourwebsite.com/thumbnail.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://username.github.io/tiktok-downloader/">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TikTok Video & Photo Downloader - No Watermark">
+  <meta name="twitter:description" content="Download TikTok videos and photos without watermark in HD. Free & Secure.">
+  <meta name="twitter:image" content="https://yourwebsite.com/thumbnail.jpg">
 
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0; padding: 0;
-      background: #121212;
-      color: #f1f1f1;
+      background: #121212; color: #f1f1f1;
       display: flex; justify-content: center; align-items: center;
-      flex-direction: column;
-      min-height: 100vh;
+      flex-direction: column; min-height: 100vh;
     }
     .box {
       width: 95%; max-width: 600px;
-      padding: 25px;
-      background: #1e1e1e;
-      border-radius: 15px;
-      text-align: center;
+      padding: 25px; background: #1e1e1e;
+      border-radius: 15px; text-align: center;
       box-shadow: 0 0 15px rgba(255,0,80,0.4);
     }
     h1 { color: #ff0050; }
@@ -45,6 +56,7 @@
     .download:hover { background: #00a843; }
     .error { color: #ff5252; margin-top: 10px; }
     .loading { margin-top: 15px; font-size: 14px; color: #bbb; }
+    footer { margin-top: 30px; font-size: 13px; color: #777; }
   </style>
 </head>
 <body>
@@ -82,13 +94,13 @@
           if (data.data) {
             resultDiv.innerHTML = "";
 
-            // 🎥 যদি ভিডিও থাকে
+            // 🎥 Video Download
             if (data.data.play) {
               resultDiv.innerHTML +=
                 `<a class="download" href="${data.data.play}" download target="_blank" rel="noopener noreferrer">👉 Download Video</a><br>`;
             }
 
-            // 🖼️ যদি ফটো থাকে (images array)
+            // 🖼️ Photo Download
             if (data.data.images && data.data.images.length > 0) {
               resultDiv.innerHTML += "<h3>Download Photos:</h3>";
               data.data.images.forEach((img, index) => {
